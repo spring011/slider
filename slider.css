@@ -1,0 +1,69 @@
+
+html,body{
+    width: 100%;
+}
+html{
+	font-size: 20px;
+}
+
+body{
+    font-family:  "微软雅黑", "\5FAE\8F6F\96C5\9ED1", sans-serif,arial, tahoma;
+    font-size: 100%;
+    background-color: #72966e;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+#container{
+	margin: 10px auto;
+	width: 655px;
+	height: 789px;
+	background-image: url('images/device.png');
+	background-repeat: no-repeat;
+	background-position: top left;
+	
+	position: relative;
+}
+#slider{
+	position: relative;
+	overflow: hidden;
+	left: 156px;
+	top: 2px;
+	height: 636px;
+	width: 311px;
+}
+#slider > div{
+	width: 311px;
+	height: 551px;
+	position: absolute;
+	top: 87px;
+}
+
+#slider > div:nth-child(1){
+	display: block;
+	background-color: green;
+	left: 0px;
+}
+#slider > div:nth-child(2){
+	display: block;
+	background-color: red;
+	left: 310px;
+}
+#slider > div:nth-child(3){
+	display: none;
+	background-color: blue;
+	left: 310px;
+}
+#slider > div:nth-child(4){
+	display: none;
+	background-color: purple;
+	left: 310px;
+}
+#slider > div:nth-child(5){
+	display: none;
+	background-color: yellow;
+	left: 310bpx;
+}
