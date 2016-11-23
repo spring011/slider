@@ -10,8 +10,8 @@ var slider = (function(){
         return elem.currentStyle || document.defaultView.getComputedStyle(elem, null);
     }
 
-    function setDisPlay(elem, value){
-    	elem.style.display = value;
+    function setVisibility(elem, value){
+    	elem.style.visibility = value;
     }
 
     function setLeft(elem, left){
@@ -37,8 +37,6 @@ var slider = (function(){
 		}
 	}
 
-
-
 	/*
 	*data
 	*/
@@ -57,9 +55,6 @@ var slider = (function(){
 		observer: {}
 	}
 
-
-
-    
 	/*
 	*operate
 	*/
@@ -79,9 +74,9 @@ var slider = (function(){
 	function runFrame(){
 		var move = 0,
 		stepLen = 3;
-
-		var timer = setInterval(function(){
-			setDisPlay(data.slideElemsArr[(data.index + 1) % data.count], "block");
+		requestAnimationFrame(run);
+		function run(){
+			setVisibility(data.slideElemsArr[(data.index + 1) % data.count], "visible");
 
 			if(move < data.slideElemWdth){
 				move = move + stepLen;
@@ -92,23 +87,17 @@ var slider = (function(){
 
 				setLeft(data.slideElemsArr[data.index], data.lLeft - move);
 				setLeft(data.slideElemsArr[(data.index + 1) % data.count], data.rLeft - move);
+				requestAnimationFrame(run);
 			}else{
-				clearInterval(timer);
-
 				
 				setLeft(data.slideElemsArr[data.index], data.rLeft);
-				setDisPlay(data.slideElemsArr[data.index], "none");
+				setVisibility(data.slideElemsArr[data.index], "hidden");
 
 				Observer.trigger(data.observer, "nextFrame");
 
 			}
-
-
-		},30);
-
+		}
 	}
-	
-
 
 	/*
 	* frame manager
@@ -126,8 +115,6 @@ var slider = (function(){
 		transform();
 
 	})
-
-
 
 	/*
 	*interface

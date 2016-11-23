@@ -43,27 +43,27 @@ body{
 }
 
 #slider > div:nth-child(1){
-	display: block;
+	visibility: visible;
 	background-color: green;
 	left: 0px;
 }
 #slider > div:nth-child(2){
-	display: block;
+	visibility: hidden;
 	background-color: red;
 	left: 310px;
 }
 #slider > div:nth-child(3){
-	display: none;
+	visibility: hidden;
 	background-color: blue;
 	left: 310px;
 }
 #slider > div:nth-child(4){
-	display: none;
+	visibility: hidden;
 	background-color: purple;
 	left: 310px;
 }
 #slider > div:nth-child(5){
-	display: none;
+	visibility: hidden;
 	background-color: yellow;
 	left: 310bpx;
 }
